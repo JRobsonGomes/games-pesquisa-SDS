@@ -1,24 +1,28 @@
 package com.robson.sdspesquisa.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
-public class Genre implements Serializable {
+import com.robson.sdspesquisa.entities.ununs.Platform;
+
+public class Game implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	private Long id;
-	private String name;
+	private String title;
+	private Platform platform;
 	
-	private List<Game> games = new ArrayList<>();
+	private Genre genre;
 	
-	public Genre() {
+	public Game() {
+		
 	}
-	
-	public Genre(Long id, String name) {
+
+	public Game(Long id, String title, Platform platform, Genre genre) {
 		super();
 		this.id = id;
-		this.name = name;
+		this.title = title;
+		this.platform = platform;
+		this.genre = genre;
 	}
 
 	public Long getId() {
@@ -29,17 +33,29 @@ public class Genre implements Serializable {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public Platform getPlatform() {
+		return platform;
+	}
+
+	public void setPlatform(Platform platform) {
+		this.platform = platform;
 	}
 
 	
-	public List<Game> getGames() {
-		return games;
+	public Genre getGenre() {
+		return genre;
+	}
+
+	public void setGenre(Genre genre) {
+		this.genre = genre;
 	}
 
 	@Override
@@ -58,7 +74,7 @@ public class Genre implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Genre other = (Genre) obj;
+		Game other = (Game) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
