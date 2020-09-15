@@ -1,6 +1,8 @@
 package com.robson.sdspesquisa.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.robson.sdspesquisa.entities.ununs.Platform;
 
@@ -13,8 +15,9 @@ public class Game implements Serializable {
 	
 	private Genre genre;
 	
+	private List<Record> records = new ArrayList<>();
+	
 	public Game() {
-		
 	}
 
 	public Game(Long id, String title, Platform platform, Genre genre) {
@@ -49,13 +52,16 @@ public class Game implements Serializable {
 		this.platform = platform;
 	}
 
-	
 	public Genre getGenre() {
 		return genre;
 	}
 
 	public void setGenre(Genre genre) {
 		this.genre = genre;
+	}
+
+	public List<Record> getRecords() {
+		return records;
 	}
 
 	@Override
