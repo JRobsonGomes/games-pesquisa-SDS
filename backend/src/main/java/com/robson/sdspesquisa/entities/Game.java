@@ -7,7 +7,7 @@ import java.util.List;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.robson.sdspesquisa.entities.ununs.Platform;
+import com.robson.sdspesquisa.entities.enuns.Platform;
 
 @Entity
 @Table(name = "tb_game")

@@ -1,4 +1,4 @@
-package com.robson.sdspesquisa.entities.ununs;
+package com.robson.sdspesquisa.entities.enuns;
 
 public enum Platform {
 
